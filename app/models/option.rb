@@ -1,5 +1,5 @@
 class Option < ApplicationRecord
-  searchkick
+  # searchkick
   
   belongs_to :question
   has_many :answers

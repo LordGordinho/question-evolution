@@ -1,7 +1,7 @@
 class Question < ApplicationRecord
-  searchkick
+  # searchkick
   
-  has_many :options
+  has_many :options, dependent: :destroy
   has_many :answers, through: :options
   belongs_to :subject
 end

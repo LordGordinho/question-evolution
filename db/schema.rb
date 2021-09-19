@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210904134606) do
+ActiveRecord::Schema.define(version: 20210917144054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,11 +64,18 @@ ActiveRecord::Schema.define(version: 20210904134606) do
     t.string "interests", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.bigint "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.bigint "role_id"
     t.index ["email"], name: "index_users_on_email"
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
   add_foreign_key "answers", "options"
   add_foreign_key "answers", "questions"
   add_foreign_key "options", "questions"
   add_foreign_key "questions", "subjects"
+  add_foreign_key "users", "roles"
 end

@@ -6,15 +6,16 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
+gem 'oj'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.7'
 gem 'redis', '~> 4.0'
 gem 'searchkick'
-gem 'bcrypt', '~> 3.1.7'
 gem 'simple_command'
-gem 'oj'
+gem "paperclip"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
